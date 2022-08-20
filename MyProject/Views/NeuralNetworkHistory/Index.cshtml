@@ -1,0 +1,21 @@
+﻿@model IQueryable<NeuralNetworkModel>
+@using AIProject.Service
+
+<div class="text-center">
+    <a asp-controller="NeuralNetwork" asp-action="Index">New Neural Network</a>
+</div>
+<div class="text-center">
+    @foreach(NeuralNetworkModel entity in Model)
+     {
+     <div>
+        @entity.Id
+         |
+         <a asp-controller="NeuralNetwork" asp-action="Index" asp-route="@entity.Id">Edit</a>
+         |
+         <form method="post" asp-controller="NeuralNetworkHistory" asp-action=" DeleteNauralNetwork">
+             <input type ="hidden" value="model.Id" name="Id"/>
+             <input type="submit" value="Delete" />
+         </form>
+     </div>
+     }
+</div>

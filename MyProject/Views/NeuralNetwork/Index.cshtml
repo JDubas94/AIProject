@@ -1,0 +1,67 @@
+﻿@model NeuralNetworkModel
+
+<h2>NeuralNetwork</h2>
+<div>
+    <label>Download date file</label><br />
+    <form asp-route="NeuralNetwork/SaveFileToPhysicalFolder" enctype="multipart/form-data" method="POST">
+        <input type="file" name="file" />
+        <button type="submit" class="btn btn-primary">File upload</button>
+    </form>
+</div>
+<div class="text-center">
+    <form asp-controller="NeuralNetwork" asp-action="Index" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserId" />
+        <div asp-validation-summary="All"></div>
+        <p>
+            Choose your neural network type:<br />
+            <select   name="TypeId" onchange="detectChange(this)">
+                @foreach (var item in ViewBag.NNTypes)
+                {
+                    <option value="@item.Id" id="@item.Code">@item.Name</option> 
+                }
+            </select>
+        </p>
+        <p>
+            <label>Persentage test set:</label><br />
+            <input type="number" name="PersentageTestSet" />
+        </p>
+        <p>
+            <label>Epochs:</label><br />
+            <input type="number" name="Epochs" />
+        </p>
+        <p>
+            <label>Cycles</label><br />
+            <input type="number" name="Cycles" />
+        </p>
+        <p>
+            <label>Rules:</label><br />
+            <input type="number" name="Rules" />
+        </p>
+        <p>
+            <label>Gradient step:</label><br />
+            <input type="number" name="GradientStep" />
+        </p>
+        <p>
+            <label>Threshold error:</label><br />
+            <input type="number" name="ThresholdError" />
+        </p>
+        <p>
+            <label>Layers:</label><br />
+            <input type="number" name="Layers" />
+        </p>
+        <p>
+            <label>Newrons in layer:</label><br />
+            <input type="number" name="NewronsInLayer" />
+        </p>
+        <p>
+            <input type="submit" value="Train" />
+        </p>
+    </form>
+</div>
+<script type="text/javascript">
+    function detectChange(selectOS) {
+        console.log(selectOS.id)
+    }
+</script>
+

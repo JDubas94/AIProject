@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIProject", "MyProject\AIProject.csproj", "{0CB17B96-2AB6-4A52-B627-5C0762F5DC81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIProject", "AIProject\AIProject.csproj", "{0CB17B96-2AB6-4A52-B627-5C0762F5DC81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

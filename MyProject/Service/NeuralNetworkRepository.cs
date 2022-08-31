@@ -9,7 +9,7 @@ namespace AIProject.Service
 {
     public class NeuralNetworkRepository
     {
-        private readonly ApplicationDbContext context;
+        protected readonly ApplicationDbContext context;
         public NeuralNetworkRepository(ApplicationDbContext context)
         {
             this.context = context;
